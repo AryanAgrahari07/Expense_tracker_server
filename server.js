@@ -9,14 +9,10 @@ app.use(express.json());
 app.use('/api/users/', userroute);
 app.use('/api/transactions/', transactionRoute);
 
-// Database Connection 
-mongoose.connect("mongodb://localhost:27017/expense_tracker" , {
-  
+mongoose.connect("mongodb+srv://newuser_1:aryan1000@cluster0.ecaluid.mongodb.net/?retryWrites=true&w=majority" , {
 }).then(()=> {
     console.log("Database Connected");
 }).catch((e) => {console.log(e)});
-
-
 const port =process.env.PORT || 5000
 
 if(process.env.NODE_ENV === 'production')
