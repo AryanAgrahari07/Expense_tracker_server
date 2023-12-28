@@ -9,7 +9,8 @@ const transactionRoute = require("./routes/transaction.js")
 // Enable CORS for all routes
 app.use(
   cors({
-    origin: '*'
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
   })
 );
 
