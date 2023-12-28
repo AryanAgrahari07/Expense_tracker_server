@@ -10,7 +10,9 @@ const transactionRoute = require("./routes/transaction.js")
 app.use(
   cors({
     origin: '*',
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
+    credentials: true,
+    optionsSuccessStatus: 204,
   })
 );
 
