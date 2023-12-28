@@ -9,19 +9,9 @@ const transactionRoute = require("./routes/transaction.js")
 // Enable CORS for all routes
 app.use(
   cors({
-    origin: "https://expense-tracker777.netlify.app",
-    methods: ["GET,HEAD,PUT,PATCH,POST,DELETE"],
-    credentials: true,
-    optionsSuccessStatus: 204, // For successful preflight requests
+    origin: '*'
   })
 );
-
-app.get('/api/users/login', (req, res) => {
-  res.header("Access-Control-Allow-Origin", "https://expense-tracker777.netlify.app");
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  // Your route logic here
-});
 
 app.use(express.json());
 app.use('/api/users/', userroute);
